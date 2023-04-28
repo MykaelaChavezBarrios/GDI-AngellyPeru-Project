@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <link type="text/css" href="{% static 'css/fact_reg.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="Pagina">
+        <div class="Cabecera">
+            <img src="https://pbs.twimg.com/media/FiZbYUYWYAA9e9e?format=jpg&name=small" width="176px" height="85px">
+            <p> REGISTRAR FACTURA </p>
+        </div>
+        <header>
+            <ol>
+                <lo><a href="{%url 'home'%}">Home</a></lo>
+            </ol>
+            <form action="/my-handling-form-page" method="post">
+                <ul>
+                    <li>
+                        <label for="date">Fecha:</label>
+                        <input type="date" id="fecha" name="fecha">
+                    </li>
+                    <li>
+                        <label for="bol">Numero de Factura:</label>
+                        <input type="text" name="user_bol" id="bol">
+                    </li>
+                    <li>
+                        <label for="arti">Codigo Articulo:</label>
+                        <form class="example" action="action_page.php">
+                            <input type="text" placeholder="" name="search">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                        <table border="2">
+                            <thead>
+                                <tr>
+                                    <th> Codigo </th>
+                                    <th> Descripción </th>
+                                    <th> Precio Unitario </th>
+                                    <th> Cantidad </th>
+                                    <th> Descuento </th>
+                                    <th> Total </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{reg.0}}</td>
+                                    <td>{{reg.1}}</td>
+                                    <td>{{reg.2}}</td>
+                                    <td>{{reg.3}}</td>
+                                    <td>{{reg.4}}</td>
+                                    <td>{{reg.5}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                    <li>
+                        <label for="descrip">Descripcion:</label>
+                        <input type="text" name="user_descrip" id="descrip">
+                    </li>
+                    <li>
+                        <label for="pre">Precio Unitario:</label>
+                        <input type="text" name="user_pre" id="pre">
+                    </li>
+                    <table border="2">
+                        <thead>
+                            <tr>
+                                <th> ICBPER P </th>
+                                <th> OP gravadas </th>
+                                <th> IGV </th>
+                                <th> Total </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{reg.0}}</td>
+                                <td>{{reg.1}}</td>
+                                <td>{{reg.2}}</td>
+                                <td>{{reg.3}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <li>
+                        <br>
+                        <a href=""> Emitir Factura e Imprimirla</a>
+                    </li>
+                </ul>
+            </form>
+        </header>
+    </div>
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Encuentranos</h4>
+                    <p class="lead mb-0">
+                        Lima
+                        <br />
+                        944378940
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="copyright py-4 text-center text-white">
+        <div class="container"><small>Copyright &copy; Tu sitio web 2022</small></div>
+    </div>
+
+</body>
+
+</html>

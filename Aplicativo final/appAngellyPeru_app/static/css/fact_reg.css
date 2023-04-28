@@ -1,0 +1,126 @@
+.Cabecera{ 
+    display: flex; 
+    flex-direction: row; 
+    background-color: #AF3A60; 
+    justify-content: center; 
+    color: white; 
+    height: 87px; 
+    text-align:justify; 
+}  
+.Cabecera p { 
+    width: 800px; 
+    text-align:right; 
+    font-size: 27px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+}
+
+ 
+header{
+  margin: 90px;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    background-color: #AF3A60;
+    color: #fff;
+    text-align: center;
+}
+.copyright {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #1a252f;
+    text-align: center;
+}
+* {
+    box-sizing: border-box;
+    text-align: center;
+  }
+ 
+  form.example input[type=text] {
+    margin: 40px auto;
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: right;
+    width: 20%;
+    background: #f1f1f1;
+  }
+ 
+  form.example button {
+    margin: 40px auto;
+    float: right;
+    width: 10%;
+    padding: 10px;
+    background: #000000;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; 
+
+    cursor: pointer;
+  }
+  
+  form.example button:hover {
+    background: #ad667c;
+  }
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  a{
+    margin:40px auto;
+    padding: 15px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 20%;
+    background: #f1f1f1;
+  }
+  form {
+    margin:90px auto;
+    background-color: rgb(249, 249, 249);
+    /* Centrar el formulario en la página */ 
+    margin: 0 auto;
+    width: 400px;
+    /* Esquema del formulario */
+    padding: 1em;
+}
+ul{
+    list-style: none; 
+    padding: 0; 
+    margin: 0;
+}
+formli+li{ 
+    margin-top: 1em;
+}
+label {
+    display: inline-block;
+    width: 75px;
+    text-align: left;
+}
+input, textarea, select {
+    font: 1em sans-serif;
+    width: 350px;
+    box-sizing: border-box;
+    border: 1px solid #999;
+}
+input:focus, 
+textarea:focus {
+    border-color: #000; 
+}
+textarea {
+    vertical-align: top;
+    height: 5em; 
+}
+table{
+  margin: 40px auto;
+  font-size: 20px;
+  border-style: dotted;
+}

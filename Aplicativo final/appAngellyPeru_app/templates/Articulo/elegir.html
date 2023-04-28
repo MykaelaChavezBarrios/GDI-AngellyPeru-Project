@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <link type="text/css" href="{% static 'css/art_elegir.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="Pagina">
+        <div class="Cabecera">
+            <img src="https://pbs.twimg.com/media/FiZbYUYWYAA9e9e?format=jpg&name=small" width="176px" height="85px">
+            <p> ALMACÉN </p>
+        </div>
+        <header>
+            <ol>
+                <lo><a href="{%url 'home'%}">Home</a></lo>
+            </ol>
+            <form role="search">
+                <input type="text" name="cod_art" id="" required>
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            {% if tabla %}
+            {% for reg in tabla %}
+
+            <p>Código: {{reg.0}}</p>
+            <p>Descripción: {{reg.1}}</p>
+            <p>Precio Unitario: {{reg.2}}</p>
+            {% endfor %}
+            {% else %}
+            <p>Código:</p>
+            <p>Descripción:</p>
+            <p>Precio Unitario:</p>
+            {% endif %}
+            <form method="post">
+                {% csrf_token %}
+                <ul>
+                    <li>
+                        <label>Cantidad:</label>
+                        <input type="text" inputmode="numeric" name="cant" id="">
+                    </li>
+                    <li>
+                        <label>Descuento:</label>
+                        <input type="text" inputmode="numeric" name="desc" id="">
+                    </li>
+                    <li>
+                        <label>Valor Venta:</label>
+                        <input type="text" inputmode="numeric" name="valor" id="" readonly>
+                    </li>
+                    <li>
+                        <br>
+                        <input type="submit" value="Agregar">
+                    </li>
+
+                </ul>
+            </form>
+        </header>
+    </div>
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Encuentranos</h4>
+                    <p class="lead mb-0">
+                        Lima
+                        <br />
+                        944378940
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="copyright py-4 text-center text-white">
+        <div class="container"><small>Copyright &copy; Tu sitio web 2022</small></div>
+    </div>
+
+</body>
+
+</html>

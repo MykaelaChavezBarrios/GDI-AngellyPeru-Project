@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="{% static 'css/sel_bf.css'%}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="Pagina">
+        <div class="Cabecera">
+            <img src="https://pbs.twimg.com/media/FiZbYUYWYAA9e9e?format=jpg&name=small" width="176px" height="85px">
+
+        </div>
+        <header>
+            <a href="{% url 'home' %}">Home</a>
+            <div class="contenedor" id="uno">
+                <img class="icon">
+                <p class="texto">-</p>
+            </div>
+            <div class="contenedor" id="dos">
+                <img class="icon"
+                    src="https://media.istockphoto.com/id/1160176778/ja/%E3%83%99%E3%82%AF%E3%82%BF%E3%83%BC/%E4%BA%BA%E3%81%AE%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3-%E9%80%A3%E7%B5%A1%E5%85%88%E3%81%AE%E8%BF%BD%E5%8A%A0-%E5%8F%8B%E4%BA%BA%E3%82%92%E8%BF%BD%E5%8A%A0-%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E3%82%92%E8%BF%BD%E5%8A%A0.jpg?s=612x612&w=is&k=20&c=01n5N_YQ_NQTk79kn_milg9NnUeJOmAkBC5jBH1i0nA=">
+                <p class="texto"><a href="{% url 'SelectTyCliN/InCliNnwe' %}"> Cliente Natural nuevo</a></p>
+            </div>
+            <div class="contenedor" id="tres">
+                <img class="icon"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_V6Jw-AV1KCvXGnK8muvEptCFYNHFzXlbhBoAYmeivchxtBuHuE6gcLGQVLotNc6Ef68&usqp=CAU">
+                <p class="texto"><a href="{% url 'RegistrarBoleta/ClienteRegistrado' %}"> Cliente Natural registrado</a>
+                </p>
+            </div>
+            <div class="contenedor" id="cuatro">
+                <img class="icon">
+                <p class="texto">-</p>
+            </div>
+        </header>
+    </div>
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Encuentranos</h4>
+                    <p class="lead mb-0">
+                        Lima
+                        <br />
+                        944378940
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="copyright py-4 text-center text-white">
+        <div class="container"><small>Copyright &copy; Tu sitio web 2022</small></div>
+    </div>
+
+</body>
+
+</html>

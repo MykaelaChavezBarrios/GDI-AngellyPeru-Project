@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="{% static 'css/sel_bf_h.css'%}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="Pagina">
+        <div class="Cabecera">
+            <img src="https://pbs.twimg.com/media/FiZbYUYWYAA9e9e?format=jpg&name=small" width="176px" height="85px">
+        </div>
+        <header>
+            <a href="{%url 'home'%}">Home</a>
+            <div class="contenedor" id="uno">
+                <img class="icon">
+                <p class="texto">-</p>
+            </div>
+            <div class="contenedor" id="dos">
+                <img class="icon" src="https://redgestorespublicos.pe/wp-content/uploads/2018/12/5b0f568202acb.jpeg">
+                <p class="texto"><a href="{%url 'HistorialBoleta' %}"> Boletas historial</a></p>
+            </div>
+            <div class="contenedor" id="tres">
+                <img class="icon"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwSL7evHowRRCdvDbcpdEewAGlCJZA-ObmBfuD1DqdvNY-WoroyAa-W1h3vA-bRXA_wQ8&usqp=CAU">
+                <p class="texto"><a href="{%url 'HistorialFactura'%}"> Facturas historial</a></p>
+            </div>
+            <div class="contenedor" id="cuatro">
+                <img class="icon">
+                <p class="texto">-</p>
+            </div>
+        </header>
+    </div>
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Encuentranos</h4>
+                    <p class="lead mb-0">
+                        Lima
+                        <br />
+                        944378940
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="copyright py-4 text-center text-white">
+        <div class="container"><small>Copyright &copy; Tu sitio web 2022</small></div>
+    </div>
+
+</body>
+
+</html>

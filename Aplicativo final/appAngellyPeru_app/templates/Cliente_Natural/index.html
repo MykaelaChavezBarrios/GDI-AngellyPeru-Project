@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link type="text/css" href="{% static 'css/cli_index.css'%}" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="Pagina">
+        <div class="Cabecera">
+            <img src="https://pbs.twimg.com/media/FiZbYUYWYAA9e9e?format=jpg&name=small" width="176px" height="85px">
+            <p> CLIENTE NATURAL </p>
+        </div>
+        <header>
+            <ol>
+                <lo><a href="{% url 'home'%}">Home</a></lo>
+            </ol>
+            <a href="{% url 'InCliN'%}">Insertar Cliente </a>
+            <form class="example" action="">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            <table border="2">
+                <thead>
+                    <tr>
+                        <th> DNI </th>
+                        <th> Nombre </th>
+                        <th> Apellido </th>
+                        <th> Dirección </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for reg in tabla %}
+                    <tr>
+                        <td>{{reg.0}}</td>
+                        <td>{{reg.1}}</td>
+                        <td>{{reg.2}}</td>
+                        <td>{{reg.3}}</td>
+                        <td>
+                            <a href="{% url 'UpCliN' reg.0%}">Editar</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </header>
+    </div>
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Encuentranos</h4>
+                    <p class="lead mb-0">
+                        Lima
+                        <br />
+                        944378940
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="copyright py-4 text-center text-white">
+        <div class="container"><small>Copyright &copy; Tu sitio web 2022</small></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <link type="text/css" href="{% static 'css/bol_reg.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="Pagina">
+        <div class="Cabecera">
+            <img src="https://pbs.twimg.com/media/FiZbYUYWYAA9e9e?format=jpg&name=small" width="176px" height="85px">
+            <p> REGISTRAR BOLETA </p>
+        </div>
+        <header>
+            <ol>
+                <lo><a href="{%url 'home'%}">Home</a></lo>
+            </ol>
+            <form method="post">
+                <ul>
+                    {%for bol in boleta_cabecera %}
+                    <li>
+                        <p>FECHA: {{bol.1}} - {{bol.2}} - {{bol.3}}</p>
+                        <p>NÚMERO DE BOLETA: {{bol.0}}</p>
+                        <p>DNI: {{bol.4}}</p>
+                        <p>Cliente: {{bol.5}} {{bol.6}}</p>
+                        <p>Dirección: {{bol.7}}</p>
+                    </li>
+                    <li>
+                        <a href="{%url 'AgregarArt' bol.0%}">Agregar Artículos</a>
+                    </li>
+                    <li>
+                        <br>
+                        <a href="{%url 'BoletaFinal' bol.0 %}"> Emitir Boleta e Imprimirla</a>
+                    </li>
+                    {% endfor %}
+                    <li>
+                        <table border="2">
+                            <thead>
+                                <tr>
+                                    <th> Codigo </th>
+                                    <th> Descripción </th>
+                                    <th> Precio Unitario </th>
+                                    <th> Cantidad </th>
+                                    <th> Descuento </th>
+                                    <th> Valor Venta </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for det in boleta_cuerpo %}
+                                <tr>
+                                    <td>{{det.0}}</td>
+                                    <td>{{det.1}}</td>
+                                    <td>{{det.2}}</td>
+                                    <td>{{det.3}}</td>
+                                    <td>{{det.4}}</td>
+                                    <td>{{det.5}}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </li>
+                    <table border="2">
+                        <thead>
+                            <tr>
+                                <th> ICBPER P </th>
+                                <th> OPgravadas </th>
+                                <th> IGV </th>
+                                <th> Total </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for pie in boleta_pie %}
+                            <tr>
+                                <td>{{pie.0}}</td>
+                                <td>{{pie.1}}</td>
+                                <td>{{pie.2}}</td>
+                                <td>{{pie.3}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </ul>
+            </form>
+        </header>
+    </div>
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Encuentranos</h4>
+                    <p class="lead mb-0">
+                        Lima
+                        <br />
+                        944378940
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="copyright py-4 text-center text-white">
+        <div class="container"><small>Copyright &copy; Tu sitio web 2022</small></div>
+    </div>
+
+</body>
+
+</html>

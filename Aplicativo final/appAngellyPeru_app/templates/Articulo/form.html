@@ -1,0 +1,120 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/art_form.css' %}">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div class="Pagina">
+        <div class="Cabecera">
+            <img src="https://pbs.twimg.com/media/FiZbYUYWYAA9e9e?format=jpg&name=small" width="176px" height="85px">
+            <p> ALMACÉN </p>
+        </div>
+        <header>
+            <ol>
+                <lo><a href="{% url 'home'%}">Home</a></lo>
+            </ol>
+            <form method="post">
+                {% csrf_token %}
+                {% if tabla%}
+                <ul>
+                    <li>
+                        <label for="">Codigo: </label>
+                        <input type="text" name="cod_art" id="" value="{{tabla.0.0}}" maxlength="12" required readonly>
+                    </li>
+                    <li>
+                        <label for="">Descripcion: </label>
+                        <input type="text" name="des_art" id="" value="{{tabla.0.1}}" maxlength="100" required>
+                    </li>
+                    <li>
+                        <label for="">PrecioUnitario</label>
+                        <input type="text" name="pre_art" id="" value="{{tabla.0.2}}" inputmode="numeric" required>
+                    </li>
+                    <li>
+                        <label for="">Empaque: </label>
+                        <input type="text" name="emp_art" id="" value="{{tabla.0.3}}" inputmode="numeric" required>
+                    </li>
+                    <li>
+                        <label for="">Medida</label>
+                        <input type="text" name="med_art" id="" value="{{tabla.0.4}}" maxlength="6" required>
+                    </li>
+                    <li>
+                        <label for="">Stock</label>
+                        <input type="text" name="sto_art" id="" value="{{tabla.0.5}}" inputmode="numeric" required>
+                    </li>
+
+                    <li>
+                        <br>
+                        <input type="submit" value="ENVIAR">
+                        <a href="{% url 'Almacen' %}">CANCELAR</a>
+                    </li>
+
+                </ul>
+                {% else %}
+                <ul>
+                    <li>
+                        <label for="">Codigo: </label>
+                        <input type="text" name="cod_art" id="" maxlength="12" required>
+                    </li>
+                    <li>
+                        <label for="">Descripcion: </label>
+                        <input type="text" name="des_art" id="" maxlength="100" required>
+                    </li>
+                    <li>
+                        <label for="">PrecioUnitario</label>
+                        <input type="text" name="pre_art" id="" inputmode="numeric" required>
+                    </li>
+                    <li>
+                        <label for="">Empaque: </label>
+                        <input type="text" name="emp_art" id="" inputmode="numeric" required>
+                    </li>
+                    <li>
+                        <label for="">Medida</label>
+                        <input type="text" name="med_art" id="" value="{{tabla.0.4}}" maxlength="6" required>
+                    </li>
+                    <li>
+                        <label for="">Stock</label>
+                        <input type="text" name="sto_art" id="" inputmode="numeric" required>
+                    </li>
+
+                    <li>
+                        <br>
+                        <input type="submit" value="ENVIAR">
+                        <a href="{% url 'Almacen' %}">CANCELAR</a>
+                    </li>
+
+                </ul>
+                {% endif %}
+            </form>
+        </header>
+    </div>
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Encuentranos</h4>
+                    <p class="lead mb-0">
+                        Lima
+                        <br />
+                        944378940
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="copyright py-4 text-center text-white">
+        <div class="container"><small>Copyright &copy; Tu sitio web 2022</small></div>
+    </div>
+
+</body>
+
+</html>

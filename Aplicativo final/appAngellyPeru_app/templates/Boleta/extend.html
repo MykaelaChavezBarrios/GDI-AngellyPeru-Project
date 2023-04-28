@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <link type="text/css" href="{% static 'css/ext_bol.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="Pagina">
+        <div class="Cabecera">
+            <img src="https://pbs.twimg.com/media/FiZbYUYWYAA9e9e?format=jpg&name=small" width="176px" height="85px">
+            <p> BOLETA </p>
+        </div>
+        <header>
+            <a><img src="https://pbs.twimg.com/media/FiZbYUYWYAA9e9e?format=jpg&name=small" width="176px"
+                    height="85px"></a>
+            {%for bol in boleta_cabecera %}
+            <table border="2">
+                <thead>
+                    <tr>
+                        <th> Numero de boleta </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{bol.0}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table style="width:100%">
+                <tr>
+                    <th>Cliente:</th>
+                    <td> {{bol.5}} {{bol.6}}</td>
+                </tr>
+                <tr>
+                    <th>DNI:</th>
+                    <td>{{bol.4}}</td>
+                </tr>
+                <tr>
+                    <th>Dirección:</th>
+                    <td>{{bol.7}}</td>
+                </tr>
+                <tr>
+                    <th>Fecha de Emisión:</th>
+                    <td>{{bol.1}} - {{bol.2}} - {{bol.3}}</td>
+                </tr>
+            </table>
+            {% endfor %}
+            <table border="2">
+                <thead>
+                    <tr>
+                        <th> Codigo </th>
+                        <th> Descripción </th>
+                        <th> Precio Unitario </th>
+                        <th> Cantidad </th>
+                        <th> Descuento </th>
+                        <th> Valor Venta </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for det in boleta_cuerpo %}
+                    <tr>
+                        <td>{{det.0}}</td>
+                        <td>{{det.1}}</td>
+                        <td>{{det.2}}</td>
+                        <td>{{det.3}}</td>
+                        <td>{{det.4}}</td>
+                        <td>{{det.5}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <table style="width:100%">
+                {% for pie in boleta_pie %}
+                <tr>
+                    <th>ICBPER:</th>
+                    <td> {{pie.0}}</td>
+                </tr>
+                <tr>
+                    <th>OP gravadas:</th>
+                    <td>{{pie.1}}</td>
+                </tr>
+                <tr>
+                    <th>Total IGV 18.00%:</th>
+                    <td>{{pie.2}}</td>
+                </tr>
+                <tr>
+                    <th>Importe Total</th>
+                    <td>{{pie.3}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+
+        </header>
+    </div>
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Encuentranos</h4>
+                    <p class="lead mb-0">
+                        Lima
+                        <br />
+                        944378940
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="copyright py-4 text-center text-white">
+        <div class="container"><small>Copyright &copy; Tu sitio web 2022</small></div>
+    </div>
+
+</body>
+
+</html>
